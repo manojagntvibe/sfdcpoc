@@ -54,6 +54,24 @@ JIRA_PROJECT_KEY=YOUR_PROJECT_KEY
 3. Give it a label and copy the token
 4. Use this token in your `.env` file
 
+## Testing Your Setup
+
+Before using the integration, verify your configuration:
+
+```bash
+# Check configuration and test connection
+python check_config.py
+
+# Run integration tests
+python test_integration.py
+```
+
+These scripts will verify that:
+- All dependencies are installed
+- Configuration is complete and valid
+- Connection to Jira is working
+- You have access to the specified project
+
 ## Usage
 
 ### Basic Usage
