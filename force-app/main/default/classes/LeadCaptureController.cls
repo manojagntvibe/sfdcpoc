@@ -55,22 +55,22 @@ public with sharing class LeadCaptureController {
     * ReturnType  : Lead
     ****************/
     private static Lead buildLead(Map<String, Object> leadData) {
-        Lead l = new Lead();
-        l.FirstName = (String) leadData.get('FirstName');
-        l.LastName = (String) leadData.get('LastName');
-        l.Email = (String) leadData.get('Email');
-        l.Phone = (String) leadData.get('Phone');
-        l.Company = (String) leadData.get('Company');
-        l.LeadSource = (String) leadData.get('LeadSource');
-        l.Product_Interest__c = (String) leadData.get('ProductInterest');
-        l.Segment__c = (String) leadData.get('Segment');
-        l.Consent__c = (Boolean) leadData.get('Consent');
+        Lead lead = new Lead(); 
+        lead.FirstName = (String) leadData.get('FirstName');
+        lead.LastName = (String) leadData.get('LastName');
+        lead.Email = (String) leadData.get('Email');
+        lead.Phone = (String) leadData.get('Phone');
+        lead.Company = (String) leadData.get('Company');
+        lead.LeadSource = (String) leadData.get('LeadSource');
+        lead.Product_Interest__c = (String) leadData.get('ProductInterest');
+        lead.Segment__c = (String) leadData.get('Segment');
+        lead.Consent__c = (Boolean) leadData.get('Consent');
 
-        if (String.equalsIgnoreCase(l.LeadSource, 'Website') || String.equalsIgnoreCase(l.LeadSource, 'Social Media')) {
-            l.Channel__c = 'Digital';
+        if (String.equalsIgnoreCase(lead.LeadSource, 'Website') || String.equalsIgnoreCase(lead.LeadSource, 'Social Media')) {
+            lead.Channel__c = 'Digital';
         } else {
-            l.Channel__c = 'Manual';
+            lead.Channel__c = 'Manual';
         }
-        return l;
+        return lead;
     }
 }
